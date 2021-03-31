@@ -21,7 +21,7 @@ void MouseCallback(HWND& hWnd, UINT message, WPARAM wParam, LPARAM lParam,int ch
 			choosedY = HIWORD(lParam);
 			flag = MainStack.clicked(choosedX, choosedY);
 			break;
-		case RECT:
+		case RECTFACTOR:
 			flag = 0;
 			x1 = LOWORD(lParam);
 			y1 = HIWORD(lParam);
@@ -54,11 +54,11 @@ void MouseCallback(HWND& hWnd, UINT message, WPARAM wParam, LPARAM lParam,int ch
 			if(choosedX!=LOWORD(lParam)||choosedY!=HIWORD(lParam))
 			    flag = 0;
 			break;
-		case RECT:
+		case RECTFACTOR:
 			x2 = LOWORD(lParam);
 			y2 = HIWORD(lParam);
 			if (x1 != x2 || y1 != y2) {
-				MainStack.push(RECT, x1, y1, x2, y2, 0, 0);
+				MainStack.push(RECTFACTOR, x1, y1, x2, y2, 0, 0);
 				hdc = GetDC(hWnd);
 				Rectangle(hdc, x1, y1, x2, y2);
 				ReleaseDC(hWnd, hdc);

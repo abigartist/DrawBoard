@@ -25,8 +25,8 @@ int RecordStack::push(int shape, int x1, int y1, int x2, int y2, int x3, int y3)
 		array[StackTop].x2 = x2;
 		array[StackTop].y2 = y2;
 		break;
-	case RECT:
-		array[StackTop].shape = RECT;
+	case RECTFACTOR:
+		array[StackTop].shape = RECTFACTOR;
 		array[StackTop].x1 = x1;
 		array[StackTop].y1 = y1;
 		array[StackTop].x2 = x2;
@@ -97,7 +97,7 @@ bool RecordStack::clicked(int x, int y)
 				break;
 			}
 		    break;
-		case RECT:
+		case RECTFACTOR:
 			if (IsInRectRange(x, y, array[index].x1, array[index].y1, array[index].x2, array[index].y2)) {
 				swap(index, StackTop - 1);
 				flag = 1;

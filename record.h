@@ -1,5 +1,5 @@
 #define LINE 1
-#define RECT 2
+#define RECTFACTOR 2
 #define CIR 3
 #define MOVE 0
 #define MAX_SHAPE 500
@@ -14,9 +14,12 @@
    rep_2()有两个参数的for循环
 */
 #include <iostream>
+#include <vector>
+//#include "shape_factor.h"
 
 using std::cin;
 using std::cout;
+using std::vector;
 
 struct DesAndShape {
 	int shape;
@@ -31,6 +34,7 @@ struct DesAndShape {
 class RecordStack
 {
 public:
+
 	RecordStack();
 	int push(int shape, int x1, int y1, int x2, int y2, int x3, int y3);
 	bool clicked(int x, int y);
@@ -44,5 +48,6 @@ private:
 	DesAndShape array[MAX_SHAPE];
 	int StackTop;
 	int OutCount;
+	//vector<ShapeFactor*> vec;
 };
 
